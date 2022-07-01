@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.90.1" />
+
+
+<title>Introduction - Group 6 Project: Production Sites&#39; Ecological Footprint</title>
+<meta property="og:title" content="Introduction - Group 6 Project: Production Sites&#39; Ecological Footprint">
+
+
+  <link href='https://ptds2021-g6.netlify.app/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/introduction/">Introduction</a></li>
+    
+    <li><a href="/data/">Data</a></li>
+    
+    <li><a href="/shiny/">Sustshinability (package)</a></li>
+    
+    <li><a href="/team/">Team</a></li>
+    
+    <li><a href="https://github.com/ptds2021/project--G6">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">Introduction</h1>
+
+    
+
+    <div class="article-content">
+      <h1 id="goals-and-impact">Goals and Impact</h1>
+<p>All of us are aware of the urgent need to reduce our individual ecological footprint by reducing our overall consumption, shift our purchasing habits, recycle more, invest in renewable energies and globally contribute to a common goal: a cleaner planet. Even though world leaders gather to unify and work as a united front towards sustainable changes with the ultimate goal to slow climate change, we still currently detect many problems surrounding the topic of sustainability.</p>
+<p>First, we understand that many aspects of sustainability are not well understood. Indeed, it is associated with many difficult terms (e.g. bio capacity, life-cycle analysis, embodied energy, footprint intensity, etc.) that non-specialists do not necessarily understand. Because, the average layman does not necessarily understand these terms and is sometimes overwhelmed by the overload of information in the News regarding achieving sustainability, individuals tend to completely turn away from thinking about it.</p>
+<p>Second, it is not immediately obvious how our personal immediate actions (e.g. limit water use waste, riding a bike over driving a car) fit the overall picture of the community, country and the world.</p>
+<p>Third, sustainability data is scattered among all kinds of media in a &ldquo;fuzzy&rdquo; way. Oftentimes, when doing research about the topic, one ends up being constantly redirected to more and more sources that are not necessarily mutually exclusive and collectively exhaustive.</p>
+<p>To address the above points and challenges, we want to create the S(ust)hinybility app based on a reliable database. This app aims at gathering worldwide data on ecological footprint of different types of production lands and exploit the information to produce visual outcomes enabling a user to look for specific information by country and by year. Therefore, the shiny app will provide visualization to compare between countries and understand the gravity and urgency of undertaking immediate long-lasting actions against climate change.</p>
+<p>We try to have the impact on three different levels. First, the individuals are nudged to learn about ecological footprints. This, increases knowledge and awareness and helps to make more informed decisions later on. Second, making ecological footprints comparable between countries helps to filter certain criteria and makes research more convenient. Here, the impact is a higher satisfaction of researchers looking for countries' involvement and responsibility towards sustainable changes. Third, the interactive app helps to track and trace developments. This tool could be a fact checker and used against wrongly spread information over the Internet in either way.</p>
+<h1 id="plan">Plan</h1>
+<p>Our approach is to explore a data set of more than 70,000 entries to investigate carbon emissions by country (and region) over time and, provide some visualization (<em>map</em>, <em>ggplot2</em> packages). To investigate the evolution over time of CO2 emissions, we will use time series (<em>tsibble</em> package) and ultimately, we will forecast (<em>package FPP3</em>) emissions for an horizon of time t, to be determined. To explore the data set and provide several features to our shiny app, we will use packages enabling us to manipulate the data (<em>dplyr</em>, <em>tidyverse</em>) to add features using built-in and our own functions before visually present (<em>map</em>, <em>ggplot2</em>) our findings.</p>
+<p>It is very likely that such application is already existing but our focus is to apply notions learnt in class to this specific data set through an interactive shiny app enabling the users to select different features (e.g. checkboxes, filter button&hellip;) and have a customized output.</p>
+<p>Our data collection strategy was to look for official websites providing reliable data on carbon emissions by country. We chose this approach to rely on well collected and organized data.</p>
+<p>We found and downloaded a data set containing more than 70,000 entries ordered by country and by year on the following website: <a href="https://data.world/footprint">https://data.world/footprint</a>.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

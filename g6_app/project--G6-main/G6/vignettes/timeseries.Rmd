@@ -1,0 +1,23 @@
+---
+title: "G6_timeseries"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{G6_timeseries}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Description
+
+The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. 
+
+# Shiny app
+
+The user can choose one or more countries, a record type, an indicator, the years she/he is interested in visualizing the evolution over time and an option to display forecasts or not. 

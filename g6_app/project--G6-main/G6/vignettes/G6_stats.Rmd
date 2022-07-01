@@ -1,0 +1,27 @@
+---
+title: "G6_stats"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{G6_stats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Descritpion
+
+The purpose of the function *G6_stats()* is to compute the "sustainability score" that we defined as the difference between Biocapacity per Capita of a country and the Ecological Footrpint of Consumption per Capita.
+
+The arguments of the function are country names. 
+
+If the score is negative, it means that the country consume more resources than the land is able to provide to the country. 
+
+# Shiny App
+
+In the shiny App, the user can choose one or more countries for which to compare the sustainability scores. 

@@ -1,0 +1,56 @@
+baseurl = "https://compassionate-clarke-240a24.netlify.app/"
+languageCode = "en-us"
+title = "Group 6 Project: Production Sites' Ecological Footprint"
+theme = "hugo-lithium"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+
+
+[[menu.main]]
+    name = "Introduction"
+    url = "/Introduction/"
+    weight = 10
+[[menu.main]]
+    name = "Data"
+    url = "/data/"
+    weight = 20
+[[menu.main]]
+    name = "Sustshinability (package)"
+    url = "/shiny/"
+    weight = 30
+[[menu.main]]
+    name = "Team"
+    url = "/team/"
+    weight = 40
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/ptds2021/project--G6"
+    weight = 50
+
+
+[params]
+    description = "Susthinybility"
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.12.0"
+    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    MathJaxVersion = "2.7.5"
+
+    # path to the favicon, under "static"
+    favicon = "favicon.ico"
+
+    [params.logo]
+    url = "logo.png"
+    width = 50
+    height = 50
+    alt = "Logo"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark.renderer]
+    unsafe = true  # Enable user to embed HTML snippets in Markdown content.

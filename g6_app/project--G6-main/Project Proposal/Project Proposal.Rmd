@@ -1,0 +1,190 @@
+---
+title: "Project Proposal"
+author: "from Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    highlight: tango
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+***
+
+# Goals and Impact 
+
+All of us are aware of the urgent need to reduce our individual ecological footprint by reducing our overall consumption, shift our purchasing habits, recycle more, invest in renewable energies and globally contribute to a common goal: a cleaner planet. Even though world leaders gather to unify and work as a united front towards sustainable changes with the ultimate goal to slow climate change, we still currently detect many problems surrounding the topic of sustainability. 
+
+First, we understand that many aspects of sustainability are not well understood. Indeed, it is associated with many difficult terms (e.g. bio capacity, life-cycle analysis, embodied energy, footprint intensity, etc.) that non-specialists do not necessarily understand. Because, the average layman does not necessarily understand these terms and is sometimes overwhelmed by the overload of information in the News regarding achieving sustainability, individuals tend to completely turn away from thinking about it. 
+
+Second, it is not immediately obvious how our personal immediate actions (e.g. limit water use waste, riding a bike over driving a car) fit the overall picture of the community, country and the world. 
+
+Third, sustainability data is scattered among all kinds of media in a "fuzzy" way. Oftentimes, when doing research about the topic, one ends up being constantly redirected to more and more sources that are not necessarily mutually exclusive and collectively exhaustive.
+
+To address the above points and challenges, we want to create the S(ust)hinybility app based on a reliable database. This app aims at gathering worldwide data on carbon emissions caused by different types of production lands and exploit the information to produce visual outcomes enabling a user to look for specific information by country and by year. Therefore, the shiny app will provide visualization to compare carbon emissions on a country (or region) level and understand the gravity and urgency of undertaking immediate long-lasting actions against climate change. 
+
+We try to have the impact on three different levels. First, the individuals are nudged to learn about ecological footprints. This, increases knowledge and awareness and helps to make more informed decisions later on. Second, making ecological footprints comparable between countries helps to filter certain criteria and makes research more convenient. Here, the impact is a higher satisfaction of researchers looking for countries' involvement and responsibility towards sustainable changes. Third, the interactive app helps to track and trace developments. This tool could be a fact checker and used against wrongly spread information over the Internet in either way.  
+
+# Plan 
+
+Our approach is to explore a data set of more than 70,000 entries to investigate carbon emissions by country (and region) over time and, provide some visualization (*map*, *ggplot2* packages). To investigate the evolution over time of CO2 emissions, we will use time series (*tsibble* package) and ultimately, we will forecast (*package FPP3*) emissions for an horizon of time t, to be determined. To explore the data set and provide several features to our shiny app, we will use packages enabling us to manipulate the data (*dplyr*, *tidyverse*) to add features using built-in and our own functions before visually present (*map*, *ggplot2*) our findings.
+
+In order to insure that the app is interactive, we will use features such as checkboxes, filter buttons, flags to let the user be as active as possible. 
+
+Our source of inspiration came from one of our brainstorming sessions about the semester project. Indeed, we wanted to create a shiny app providing information on our carbon footprint. Unfortunately, we couldn't find nor create (lack of time) a data set providing us with the exact information needed. Therefore, we decided to focus on countries' carbon emissions since 1961 and study the magnitude differences between them regarding certain criteria. 
+
+It is very likely that such application is already existing but our focus is to apply notions learnt in class to this specific data set through an interactive shiny app enabling the users to select different features (e.g. checkboxes, filter button...) and have a customized output. 
+
+Our data collection strategy was to look for official websites providing reliable data on carbon emissions by country. We chose this approach to rely on well collected and organized data. 
+
+We found and downloaded a data set containing more than 70,000 entries ordered by country and by year on the following website: https://data.world/footprint. We uploaded the data set in r and saved in the **read_data.R** file. Moreover we might enrich this data with other variables such as population, GDP or others.    
+
+# Timeline and Milestones 
+
+```{r Gant chart, fig.width = 10, echo=F, message=F, warning=F}
+
+library(tidyverse)
+library(ggplot2)
+
+# Create of a Gant chart to visually describe the timeline of our project. 
+# To avoid conflict related to the date, some activity had to be written twice in the data frame.
+
+Item <- c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13")
+
+Activity <- c("Find daily routines and worldwide data",
+              "Find daily routines and worldwide data", 
+              "Transform data into usable environmental units (CO2 consumption)", 
+              "Project proposal", 
+              "Package skeleton creation", 
+              "Package skeleton creation", 
+              "Analyse environmental data", 
+              "Functions to monitor and explain the user its environmental impact", 
+              "Functions to monitor and explain the user its environmental impact", 
+              "Creation of the shiny app", 
+              "Creation of the shiny app", 
+              "Creation of the vignette", 
+              "Documentation on GitHub")
+
+Project.element <- c("Data collection", 
+                     "Data collection", 
+                     "Data transformation", 
+                     "Project Proposal", 
+                     "Code", 
+                     "Code", 
+                     "Data transformation", 
+                     "Code", 
+                     "Code", 
+                     "Code", 
+                     "Code", 
+                     "Documentation", 
+                     "Documentation")
+
+Start <- c("2021.10.25", 
+           "2021.10.25", 
+           "2021.11.15", 
+           "2021.10.25", 
+           "2021.11.15", 
+           "2021.11.15", 
+           "2021.11.15", 
+           "2021.11.25", 
+           "2021.11.25", 
+           "2021.12.10", 
+           "2021.12.10", 
+           "2021.12.17", 
+           "2021.10.25")
+
+End <- c("2021.11.14", 
+         "2021.11.14", 
+         "2021.11.25", 
+         "2021.11.07", 
+         "2021.11.25", 
+         "2021.11.25", 
+         "2021.11.24", 
+         "2021.12.09", 
+         "2021.12.09", 
+         "2021.12.16", 
+         "2021.12.16", 
+         "2021.12.19", 
+         "2021.12.20")
+
+gant <- data.frame(Item, 
+                   Activity, 
+                   Project.element, 
+                   Start, 
+                   End)
+
+acts <- c("Find daily routines and worldwide data", 
+          "Transform data into usable environmental units (CO2 consumption)", 
+          "Project proposal", 
+          "Package skeleton creation", 
+          "Analyse environmental data", 
+          "Functions to monitor and explain the user its environmental impact", 
+          "Creation of the shiny app", 
+          "Creation of the vignette", 
+          "Documentation on GitHub")
+
+els <- c("Data Collection", 
+         "Data Transformation", 
+         "Project proposal", 
+         "Code", 
+         "Documentation")
+
+
+g.gantt <- gather(gant, "state", "date", 4:5) %>% 
+              mutate(date = as.Date(date, "%Y.%m.%d"), 
+                     Activity = factor(Activity, acts[length(acts):1]), 
+                     Project = factor(Project.element, els))
+
+
+ggplot(g.gantt, 
+       aes(date, Activity, color = Project.element, group=Item)) +
+  
+  geom_line(size = 10) +
+  
+  labs(x = "Date", 
+       y = NULL, 
+       title = "Project timeline")
+
+```
+
+# Management Plan 
+
+For the purpose of the progress of our project, we are planning to have at least one Zoom meeting per week, usually on Fridays, to 1) track our advancements 2) discuss and solve potential problems 3) decide on our next steps  and 4) split tasks 5) set weekly goals. 
+
+At each meeting, each team member will be able to share personal advancements and achievements on their respective tasks, ask for help if needed and share potential improvement ideas for other tasks. Each team member will be assigned to one or more tasks depending on tasks' difficulty level. Indeed, a task can have few people working on it if it is time-consuming.
+
+*Table 1* displays the mandatory administrative tasks that we already assigned to team members. 
+
+```{r, echo=F, message=FALSE, warning=FALSE}
+
+library(kableExtra)
+library(gridExtra)
+
+df <- data.frame(Gp_members = c("Colin", "Jasmine", "Guillaume", "Daniel", "Virany"),
+                 Admin_tasks = c("will be reminding everyone about the Zoom meeting every week, create it and send it on the group chat", 
+                                 "will track the advancement of the project on Github, manage the organization of the Project folder so that it does not become messy as the project progress", 
+                                 "will manage the project advancement in order to not be late compared to the timeline we decided to set for each task", 
+                                 "will make sure the Github repository is well-documented with nice commit messages, with clear issues and that the To Do list is being updated along the progression of the project",
+                                 "will verify that the overall code is well-written, with a good coding style and good commentary to explain it"))
+                  
+df_t <- as_tibble(df)
+
+df_t %>% 
+  kbl(align = c('c', 'c'), 
+      caption = "Group members administrative tasks") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), 
+                latex_options = "scale_down") 
+
+```
+
+Concerning the tasks related to the actual content of the project, we will assign them after deepening our knowledge and familiarizing with the data we found. 
+
+
+
+
+
+
+

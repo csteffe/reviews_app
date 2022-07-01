@@ -1,0 +1,39 @@
+Package: G6
+Title: G6 provides analytical tools to study countries' sustainability
+Version: 0.1.0
+Authors@R: c(
+    person("Virany", "Kho", email = "virany.kho@unil.ch", role = "aut"),
+    person("Colin", "Steffe", email = "colin.steffe@unil.ch", role = "cre"),  
+    person("Guillaume", "Bilocq", email = "guillaume.bilocq@unil.ch", role = "aut"), 
+    person("Daniel", "Welz", email = "daniel.welz@unil.ch", role = "aut"),  
+    person("Jasmine", "Mawjee", email = "jasmine.mawjee@unil.ch", role = "aut"))
+Maintainer: Colin Steffe <colin.steffe@unil.ch>
+Description: This package provides functions to study one or more countries' production sites' ecological footprint (yearly).
+License: MIT + file LICENSE
+Depends: R (>= 3.3.1)
+Imports: shiny (>= 1.7.1),
+         dplyr,
+         fable,
+         fabletools,
+         ggplot2,
+         here,
+         readr,
+         tsibble,
+         plotly,
+         data.table,
+         roxygen2,
+         magrittr,
+         feasts,
+         maps,
+         forecast,
+         fpp3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+LazyData: true
+Config/testthat/edition: 3

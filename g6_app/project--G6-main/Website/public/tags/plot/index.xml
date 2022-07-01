@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plot on Group 6 Project: Production Sites&#39; Ecological Footprint</title>
+    <link>https://ptds2021-g6.netlify.app/tags/plot/</link>
+    <description>Recent content in plot on Group 6 Project: Production Sites&#39; Ecological Footprint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Dec 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://ptds2021-g6.netlify.app/tags/plot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to our Website !</title>
+      <link>https://ptds2021-g6.netlify.app/post/2020-12-01-r-rmarkdown/index_files/</link>
+      <pubDate>Wed, 01 Dec 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://ptds2021-g6.netlify.app/post/2020-12-01-r-rmarkdown/index_files/</guid>
+      <description>Welcome ! In this website we will explain you what kind of information the Shiny App we created, an exploratory tool called Sustshinability, can provide you as well as instructions about how it works. Hope this will be useful to you !
+Shiny App: Plot ExampleTo let you have a first taste of what the Sustshinability App can provide you, you can find below an example of plot you can have and use thanks to this App.</description>
+    </item>
+    
+  </channel>
+</rss>
