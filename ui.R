@@ -1,12 +1,7 @@
 library(shiny)
 
-# get monthly data and cleaning
 
-source(here::here("R/web_scraping.R"))
-source(here::here("R/data_preparation.R"))
-source(here::here("R/tf_plot.R"))
-source(here::here("R/sentiment.R"))
-source(here::here("R/emotions.R"))
+
 
 
 
@@ -21,15 +16,18 @@ shinyUI(fluidPage(
 
   
   titlePanel(
-    title=div(img(src="batmaid_logo.jpeg"), "Customer reviews")
+    title=div(img(src="batmaid icon.png"), "Monthly customer reviews")
     ),
 
   # Add toc
-  navlistPanel(id = "tabset",
+  navlistPanel(id = "tabset",widths =c(2,8),
 
 
     tabPanel("Reviews of the month",
              tableOutput("comments")),
+    
+    tabPanel("Ratings of the month",
+             tableOutput("ratings")),
 
 
 
@@ -46,27 +44,9 @@ shinyUI(fluidPage(
 
 
 
-    tabPanel("Link between words",
-             plotOutput("link")),
+    tabPanel("Words appearing together",
+             plotOutput("link"))
 
-    #         selectInput("record_st", "Choose a record type:",
-     #                    c(unique(data$record)),
-      #                   multiple = FALSE),
-
-       #      selectInput("indicator_st", "Choose an indicator:",
-        #                 c("crop_land", "grazing_land", "forest_land",
-         #                  "fishing_ground", "built_up_land", "carbon", "total"),
-          #               multiple = FALSE),
-
-  #           selectInput(inputId =  "start_year",
-   #                      label = "Select start of the period",
-    #                     choices = 1961:2016),
-
-     #        selectInput(inputId =  "end_year",
-      #                   label = "Select end of the period",
-       #                  choices = 1961:2016),
-#
- #            tableOutput("Statistics"))
 
     )
   )
@@ -75,5 +55,6 @@ shinyUI(fluidPage(
 
 
 
-
+#library(rsconnect)
+#rsconnect::deployApp()
 

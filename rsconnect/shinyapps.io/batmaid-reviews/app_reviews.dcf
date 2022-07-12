@@ -1,0 +1,11 @@
+name: app_reviews
+title:
+username:
+account: batmaid-reviews
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6611230
+bundleId: 6081612
+url: https://batmaid-reviews.shinyapps.io/app_reviews/
+when: 1657285777.87356
+lastSyncTime: 1657285777.87358
